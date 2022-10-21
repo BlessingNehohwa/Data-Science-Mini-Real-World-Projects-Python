@@ -1,0 +1,302 @@
+---
+title: "Brazil Municipalities SPATIAL DATA ANALYSIS"
+author: "BLESSING NEHOHWA"
+date: "`r Sys.Date()`"
+output:
+  word_document: default
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r}
+##install.packages('tidyverse')
+##install.packages('sf')
+##install.packages('scales')
+##install.packages('ggplot2')
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+setwd ("C:/Users/beemu/OneDrive/SDA")
+
+
+library(tidyverse)
+library(sf)
+library(ggplot2)
+library(scales)
+library(ggsn)
+```
+
+
+
+## Question 1 
+   Produce a map showing the centroids of each municipality in just the state of Säo  
+   Paulo, and add the outer boundary of Säo Paulo state.
+
+1a). Open municipalities and filter for Sp state and print selected data within the  
+     console
+
+```{r}
+municipalities<- read_sf("C:/Users/beemu/OneDrive/SDA/municipalities/municipalities.shp" )
+municipalities_SP<-municipalities%>% filter(UF=="SP")
+print(municipalities_SP[1:10,])
+```
+
+
+1b).  Generating municipalities centroids and plotting them
+
+```{r warning=FALSE}
+municipalities_centroids<-municipalities_SP%>%st_centroid()
+municipalities_centroids %>% ggplot()+geom_sf()
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+1c).Dissolve SP State polygons to create SP state Boarder
+
+```{r}
+SP_boarder<-municipalities_SP%>%st_union()
+SP_boarder%>% ggplot()+geom_sf()
+```
+
+
+1d).    Plotting SP centroids and SP boarder together
+
+```{r}
+SP_boarder%>%ggplot() +geom_sf() +
+ geom_sf(data=municipalities_centroids) +
+  theme_classic()
+```
+
+## Question 2
+What is the mean Human Development Index of Municipalities in each state of Brazil?
+HDI is the variable from Municipalities data set.
+
+2a).Reading The table
+
+```{r}
+br_states <-municipalities[,]
+
+print(br_states)
+```
+
+2b). Calculating the mean HDI by state
+
+```{r}
+br_states <-municipalities %>% group_by(UF) %>% summarize(IDHM_mean=mean(IDHM_10))
+
+br_states
+```
+
+2c). Plotting the result (Mean)
+
+```{r}
+br_states %>%ggplot() +
+  geom_sf(aes(fill =IDHM_mean)) +
+  theme_classic() +
+  scale_fill_continuous(low="red",high="green")
+
+```
+
+
+## Question 3
+Produce a polygon/shapefile mapping the area of the municipality ‘Gaucha do Norte’ that is in the indigenous territory “Parque do Xingu”
+
+3a). Import indigenous park shapefile and plot it.
+     The projections are the same 
+
+```{r}
+indigenous<-read_sf("C:/Users/beemu/OneDrive/SDA/BC250_Terra_Indigena_A/BC250_Terra_Indigena_A.shp") %>% st_transform(4326)
+br_states %>% ggplot() +
+  geom_sf() +
+  geom_sf(data=indigenous,fill="red")
+
+```
+
+
+3b). Creating a shapefile for Gaucha do Norte e Xingu.
+
+```{r}
+Xingu <-indigenous %>% filter(nome=="Parque do Xingu")%>% st_transform(4326)
+Gaucha <- municipalities %>% filter(NOME=="GAUCHA DO NORTE") %>% st_transform (4326)
+```
+
+
+3c). Plot the shapefiles to see the overlap
+```{r}
+Gaucha%>% ggplot() +
+  geom_sf(fill="red") +
+  geom_sf(data=Xingu,fill="blue",alpha=0.5)
+```
+
+
+3d).Creating shapefile for intersection and plotting it
+    Attribute variables are assumed to be spatially constant throughout all geometries
+    changed fill colour to Orange
+    
+```{r}
+intersection <- Gaucha %>% st_intersection(Xingu)
+intersection %>% ggplot() + geom_sf(fill="black")
+
+```
+
+
+3e). Plot all together
+
+```{r}
+ Gaucha %>% ggplot() +
+  geom_sf(fill="red", alpha=0.5) +
+  geom_sf(data=Xingu, fill="blue", alpha=0.5) +
+  geom_sf(data = intersection, fill="black")
+
+```
+
+3e.)  The  area of the intersection
+
+```{r}
+st_area(intersection)
+```
+
+
+## Question 4 
+In the state of Acre (AC), which two social housing (MCMV) projects are closest to each other? Create a 10km buffer around each housing project.
+
+4a). Import Housing Shapefile
+
+```{r}
+
+Housing <- read_sf("C:/Users/beemu/OneDrive/SDA/MCMV_new/MCMV_new.shp")
+```
+
+
+4b). Select housing in AC state and plot the result.
+
+```{r}
+Housing_AC <- Housing %>% filter(UF=="AC")
+br_states %>% filter(UF=="AC") %>% ggplot() +
+  geom_sf(fill="light blue") + geom_sf(data = Housing_AC)
+
+```
+ 
+ 4c). Calculating distance between housing points and view results
+ 
+```{r}
+ distance <- Housing_AC %>%
+  st_transform(29189) %>%
+  st_distance() %>%
+  as.data.frame()
+
+print(distance[1:5,])
+```
+
+4d). Calculating buffer around housing points
+
+```{r}
+Housing_AC %>% st_transform(29189) %>%
+  st_buffer(20000) %>% 
+  ggplot() + geom_sf(fill="dark green")
+```
+
+4e). Plotting it all Together
+
+```{r}
+br_states %>% filter(UF=="AC") %>% ggplot() +
+  geom_sf(fill="light blue") + 
+  geom_sf(data = (Housing_AC %>% st_transform(29189) %>% st_buffer(20000)), fill = "dark green") +
+  geom_sf(data = Housing_AC, color = "red")
+```
+
+
+##Question 5 
+Across Brazil, which municipalities have the lowest and highest number of MCMV housing units (UH) in its territory? Create a map of the distribution of total housing units by municipality.
+
+5a). Spatial join between municipalities and housing
+
+```{r}
+mun_Housing_units <-municipalities %>% st_join(Housing)
+print(mun_Housing_units[1:5,])
+```
+
+
+5b). Calculating total of Housing units in each municipality
+
+```{r}
+mun_Housing_units <- mun_Housing_units %>%
+  group_by(COD_MUN,NOME) %>%
+  summarise(UH=sum(UH,na.rm = T)) %>%
+  ungroup()
+
+```
+
+
+5c). Select municipality with most Housing units
+
+```{r}
+mun_Housing_units %>% arrange(-UH) %>% slice(1) %>% pull(NOME)
+```
+
+5d) Plotting the distribution of total Housing units by municipality
+
+```{r}
+
+mun_Housing_units %>% ggplot() +
+  geom_sf(aes(fill=UH), col=NA) +
+  scale_fill_gradient(low="#ccece6",high="dark blue",trans="log") +
+  theme_classic()
+```
+
+NB: Transformation introduced infinite values in discrete y-axis
+
+
+##EXTRA: CREATE A VORONOI POLYGON FOR SP STATE
+
+Extra 1a). Installing and Loading needed libraries
+
+```{r}
+#install.packages("dismo")
+library(deldir)
+library (dismo)
+```
+
+
+Extra 1b).   Creating and viewing Voronoi polygon
+
+```{r}
+sp_voronoi <-municipalities_centroids %>%
+  as("Spatial") %>%
+  voronoi() %>%
+  st_as_sf()
+sp_voronoi %>% ggplot() +
+  geom_sf(fill="white")
+```
+
+
+Extra 1c).   Clipping Voronoi to SP State
+
+```{r}
+sp_voronoi_clip <- sp_voronoi %>% st_intersection(st_union(SP_boarder))
+sp_voronoi_clip %>% ggplot() + geom_sf()
+```
+Warning: attribute variables are assumed to be spatially constant throughout all geometries.
+
+
+
+## EXtra 2: Count points inside a polygon
+            Perform operation and view results
+
+```{r}
+mun_housin <- municipalities %>% st_join(Housing) %>%
+  group_by(COD_MUN) %>%
+  count()
+
+mun_housin %>% ggplot() +
+  geom_sf(aes(fill=n),col=NA) +
+  scale_fill_gradient(low = "#ccece6", high = "purple") +
+  theme_classic()
+```
+
+
+
