@@ -9,6 +9,16 @@ I then plotted a choropleth map showing different states and colours showing dif
 **[USA Unemployment spatial data analysis](https://github.com/BlessingNehohwa/Data-Science-Minor-Projects-Python/blob/main/USA%20Unemployment%20Spatial%20Data%20Analysis.ipynb
 ).**
 
+
+### 2.SAT/GPA Simple Linear Regression Analysis
+SAT scores have long been a major factor in college admissions, under the assumption that students with higher test scores will perform better in college and receive a higher GPA. We can see that the SAT is a good indicator of the GPA of an student after graduation, but we can see that out R^2 is a bit lower, so we may need more variables to perform a better regression
+
+**[SAT/GPA Simple Linear Regression Analysis](
+https://github.com/BlessingNehohwa/Data-Science-Minor-Projects-Python/blob/main/Regression%20analysis.ipynb
+).**
+
+
+
 ### 3. Logistic Regression Model to show the relationship between students SAT scores and them being Admitted [yes,No]
 Assumptions of this regression model Linearity,No outliers, independence,No endogeneity,No auto correlation,No multi-collinearity and Normality and homoscedasticity Logistic regression is senstive to outliers ,the data should not contain any outlier This logistic curve can be interpreted as the probability associated with each outcome across independent variable values. Logistic regression assumes that the relationship between the natural log of these probabilities (when expressed as odds) and your predictor variable is linear. Each data observation (data points)should be independent ,this means no value depends on each other [Blessing Nehohwa].
 
