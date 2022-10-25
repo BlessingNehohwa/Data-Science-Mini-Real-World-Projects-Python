@@ -39,5 +39,13 @@ Assumptions of this regression model Linearity,No outliers, independence,No endo
 ### 4. Canada Migration Analysis (1980-2014)
 A Choropleth map is a thematic map in which areas are shaded or patterned in proportion to the measurement of the statistical variable being displayed on the map, such as population density or per-capita income. Choropleth map provides an easy way to visualize how a measurement varies across a geographic area, or it shows the level of variability within a region.These are very critical in GIS or Spatial Data Analysis. In this Analysis am using the Canadian immigration dataset so as to ascertain which countries contributed most number immigrants into canada for the period from 1980 to 2013. The details to be visualised in a choropleth. [Blessing Nehohwa]
 
-### 4. 
+
+### 5. 
+
+
+
+
+
+
+
 **[Canada Migration Analysis 1980-2014](https://nbviewer.org/github/BlessingNehohwa/Data-Science-Minor-Projects-Python/blob/main/Canada%20Migration%20Analysis%201980-2014.ipynb).**
