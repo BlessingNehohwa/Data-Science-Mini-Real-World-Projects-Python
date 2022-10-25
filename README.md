@@ -44,4 +44,4 @@ A Choropleth map is a thematic map in which areas are shaded or patterned in pro
 
 This analysis is showing how to use folium ,to draw map and use markers to show the number of different Crime incidents commited in different areas around San Francisco in 2016. Using the San Franscico Police department incidents dataset 2016.
 
-**[Crime Incidents of San Francisco](https://github.com/BlessingNehohwa/Data-Science-Minor-Projects-Python/blob/main/Crime%20Incidents%20of%20San%20Francisco%20Map%20with%20markers.ipynb).**
+**[Crime Incidents of San Francisco](https://nbviewer.org/github/BlessingNehohwa/Data-Science-Minor-Projects-Python/blob/main/Crime%20Incidents%20of%20San%20Francisco%20Map%20with%20markers.ipynb).**
