@@ -57,4 +57,4 @@ Folium is a powerful Python library that helps you create several types of Leafl
 - Folium makes it easy to visualize data that's been manipulated in Python on an interactive Leaflet map. It enables both the binding of data to a map for choropleth 
   visualizations as well as passing Vincent/Vega visualizations as markers on the map.
 
-**[Zimbabwean Map Using Folium](https://github.com/BlessingNehohwa/Data-Science-Minor-Projects-Python/blob/main/Zimbabwean%20Map%20using%20Folium.ipynb).**
+**[Zimbabwean Map Using Folium](https://nbviewer.org/github/BlessingNehohwa/Data-Science-Minor-Projects-Python/blob/main/Zimbabwean%20Map%20using%20Folium.ipynb).**
