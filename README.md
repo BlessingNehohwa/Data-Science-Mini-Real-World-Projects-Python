@@ -45,3 +45,16 @@ A Choropleth map is a thematic map in which areas are shaded or patterned in pro
 This analysis is showing how to use folium ,to draw map and use markers to show the number of different Crime incidents commited in different areas around San Francisco in 2016. Using the San Franscico Police department incidents dataset 2016.
 
 **[Crime Incidents of San Francisco](https://nbviewer.org/github/BlessingNehohwa/Data-Science-Minor-Projects-Python/blob/main/Crime%20Incidents%20of%20San%20Francisco%20Map%20with%20markers.ipynb).**
+
+
+### 6. Zimbabwean Map using Folium
+
+This lab heavily relies on pandas and Numpy for data wrangling, analysis, and visualization. The primary plotting library we will explore in this lab is Folium.
+Folium is a powerful Python library that helps you create several types of Leaflet maps. 
+- The fact that the Folium results are interactive makes this library very useful for dashboard building.
+- Folium builds on the data wrangling strengths of the Python ecosystem and the mapping strengths of the Leaflet.js library. Manipulate your data in Python, then  
+  visualize it in on a Leaflet map via Folium.
+- Folium makes it easy to visualize data that's been manipulated in Python on an interactive Leaflet map. It enables both the binding of data to a map for choropleth 
+  visualizations as well as passing Vincent/Vega visualizations as markers on the map.
+
+**[Zimbabwean Map Using Folium](https://github.com/BlessingNehohwa/Data-Science-Minor-Projects-Python/blob/main/Zimbabwean%20Map%20using%20Folium.ipynb).**
