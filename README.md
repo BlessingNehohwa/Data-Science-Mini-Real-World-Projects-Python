@@ -1,5 +1,26 @@
 # Data-Science-Minor-Projects-Python
 
+### Python Data-science Introduction- Web Scrapping
+Web scraping (also called web data extraction or data scraping) provides a solution for those who want to get access to structured web data in an automated fashion. 
+Web scraping is useful if the public website you want to get data from doesn't have an API, or it does but provides only limited access to the data.
+Hence:-
+- I scrapped data from the Zimbabwe Stock Exchange
+- Scrapped Emails from the same
+- Scrapped images from the same website
+- Scrapped tables from the World population Wikipedia webpage and converted it into a dataframe.
+- Used pandas (pd.read.html) to scrap data from a table @'https://www.zse.co.zw/price-sheet' website.
+- Cleaned the data although it had a lot of discrepencies 
+- Saved the new data set into my local library
+**[Python Data-science Introduction- Data Extraction/Web Scrapping](https://github.com/BlessingNehohwa/Data-Science-Minor-Projects-Python/blob/main/Data%20Science%20Basic%20Analysis-%20House%20Sales%20in%20King%20County%2C%20USA.ipynb
+).**
+
+
+
+
+
+
+
+
 ### Introduction to Data Analysis project
 This analyis is based on the King County Seattle House Sales Its a dataset of homes sold between May 2014 - May 2015
 It shows all introductory steps to analysisng a data set 
