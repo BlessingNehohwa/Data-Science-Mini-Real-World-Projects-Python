@@ -52,18 +52,18 @@ Assumptions of this regression model Linearity,No outliers, independence,No endo
 **[SAT Logistic Regression Analysis](https://github.com/BlessingNehohwa/Data-Science-Minor-Projects-Python/blob/main/Logistic%20Regression%20Model-Blessing.ipynb
 ).**
 
-### 4. Canada Migration Analysis (1980-2014)
+### 6. Canada Migration Analysis (1980-2014)
 A Choropleth map is a thematic map in which areas are shaded or patterned in proportion to the measurement of the statistical variable being displayed on the map, such as population density or per-capita income. Choropleth map provides an easy way to visualize how a measurement varies across a geographic area, or it shows the level of variability within a region.These are very critical in GIS or Spatial Data Analysis. In this Analysis am using the Canadian immigration dataset so as to ascertain which countries contributed most number immigrants into canada for the period from 1980 to 2013. The details to be visualised in a choropleth. [Blessing Nehohwa]
 
 
-### 5. Crime Incidents of San Francisco
+### 7. Crime Incidents of San Francisco
 
 This analysis is showing how to use folium ,to draw map and use markers to show the number of different Crime incidents commited in different areas around San Francisco in 2016. Using the San Franscico Police department incidents dataset 2016.
 
 **[Crime Incidents of San Francisco](https://nbviewer.org/github/BlessingNehohwa/Data-Science-Minor-Projects-Python/blob/main/Crime%20Incidents%20of%20San%20Francisco%20Map%20with%20markers.ipynb).**
 
 
-### 6. Zimbabwean Map using Folium
+### 8. Zimbabwean Map using Folium
 
 This lab heavily relies on pandas and Numpy for data wrangling, analysis, and visualization. The primary plotting library we will explore in this lab is Folium.
 Folium is a powerful Python library that helps you create several types of Leaflet maps. 
