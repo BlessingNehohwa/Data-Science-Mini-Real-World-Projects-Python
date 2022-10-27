@@ -1,6 +1,6 @@
 # Data-Science-Minor-Projects-Python
 
-### Python Data-science Introduction- Web Scrapping
+### 1. Python Data-science Introduction- Web Scrapping
 Web scraping (also called web data extraction or data scraping) provides a solution for those who want to get access to structured web data in an automated fashion. 
 Web scraping is useful if the public website you want to get data from doesn't have an API, or it does but provides only limited access to the data.
 Hence:-
@@ -11,17 +11,13 @@ Hence:-
 - Used pandas (pd.read.html) to scrap data from a table @'https://www.zse.co.zw/price-sheet' website.
 - Cleaned the data although it had a lot of discrepencies 
 - Saved the new data set into my local library
-**[Python Data-science Introduction- Data Extraction/Web Scrapping](https://github.com/BlessingNehohwa/Data-Science-Minor-Projects-Python/blob/main/Data%20Science%20Basic%20Analysis-%20House%20Sales%20in%20King%20County%2C%20USA.ipynb
+
+**[Python Data-science Introduction- Data Extraction/Web Scrapping](https://github.com/BlessingNehohwa/https://nbviewer.org/github/BlessingNehohwa/Data-Science-Minor-Projects-Python/blob/main/Webscrapping%20Data%20Extraction.ipynb
 ).**
 
 
 
-
-
-
-
-
-### Introduction to Data Analysis project
+### 2. Introduction to Data Analysis project
 This analyis is based on the King County Seattle House Sales Its a dataset of homes sold between May 2014 - May 2015
 It shows all introductory steps to analysisng a data set 
 
@@ -30,8 +26,7 @@ It shows all introductory steps to analysisng a data set
 
 
 
-
-### 1. USA Unemployment spatial data analysis
+### 3. USA Unemployment spatial data analysis
 Among the most commonly used charts in geographic data is the geostatistical map. It is a form of graphic in because we use color to depict facts of an identifying characteristic in relation to its place — for example, the labor participation rate in each region.
 August 2022 data
 The analysis from the current unemployment data in the United states ranking state by state from the one with lowest to highest.
@@ -42,7 +37,7 @@ I then plotted a choropleth map showing different states and colours showing dif
 ).**
 
 
-### 2.SAT/GPA Simple Linear Regression Analysis
+### 4.SAT/GPA Simple Linear Regression Analysis
 SAT scores have long been a major factor in college admissions, under the assumption that students with higher test scores will perform better in college and receive a higher GPA. We can see that the SAT is a good indicator of the GPA of an student after graduation, but we can see that out R^2 is a bit lower, so we may need more variables to perform a better regression. [Blessing Nehohwa]
 
 **[SAT/GPA Simple Linear Regression Analysis](
@@ -51,7 +46,7 @@ https://github.com/BlessingNehohwa/Data-Science-Minor-Projects-Python/blob/main/
 
 
 
-### 3. Logistic Regression Model to show the relationship between students SAT scores and them being Admitted [yes,No]
+### 5. Logistic Regression Model to show the relationship between students SAT scores and them being Admitted [yes,No]
 Assumptions of this regression model Linearity,No outliers, independence,No endogeneity,No auto correlation,No multi-collinearity and Normality and homoscedasticity Logistic regression is senstive to outliers ,the data should not contain any outlier This logistic curve can be interpreted as the probability associated with each outcome across independent variable values. Logistic regression assumes that the relationship between the natural log of these probabilities (when expressed as odds) and your predictor variable is linear. Each data observation (data points)should be independent ,this means no value depends on each other [Blessing Nehohwa].
 
 **[SAT Logistic Regression Analysis](https://github.com/BlessingNehohwa/Data-Science-Minor-Projects-Python/blob/main/Logistic%20Regression%20Model-Blessing.ipynb
