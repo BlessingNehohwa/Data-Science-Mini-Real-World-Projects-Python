@@ -12,7 +12,7 @@ Hence:-
 - Cleaned the data although it had a lot of discrepencies 
 - Saved the new data set into my local library [Blessing Nehohwa]
 
-**[Python Data-science Introduction- Data Extraction/Web Scrapping](https://github.com/BlessingNehohwa/https://nbviewer.org/github/BlessingNehohwa/Data-Science-Minor-Projects-Python/blob/main/Webscrapping%20Data%20Extraction.ipynb
+**[Python Data-science Introduction- Data Extraction/Web Scrapping](https://github.com/BlessingNehohwa/Data-Science-Mini-Real-World-Projects-Python/blob/main/Webscrapping%20Data%20Extraction.ipynb
 ).**
 
 
