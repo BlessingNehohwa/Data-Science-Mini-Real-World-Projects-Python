@@ -18,7 +18,7 @@ Hence:-
 
 
 ### 2. Introduction to Data Analysis project
-This analyis is based on the King County Seattle House Sales Its a dataset of homes sold between May 2014 - May 2015
+This analyis is based on the King County Seattle House Sales Its a dataset of homes sold between May 2014 - May 2015.
 It shows all introductory steps to analysisng a data set [Blessing Nehohwa]
 
 **[Data Science Basic Analysis- House Sales in King County, USA](https://github.com/BlessingNehohwa/Data-Science-Minor-Projects-Python/blob/main/Data%20Science%20Basic%20Analysis-%20House%20Sales%20in%20King%20County%2C%20USA.ipynb
