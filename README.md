@@ -4,7 +4,7 @@
 Web scraping (also called web data extraction or data scraping) provides a solution for those who want to get access to structured web data in an automated fashion. 
 Web scraping is useful if the public website you want to get data from doesn't have an API, or it does but provides only limited access to the data.
 Hence:-
-- I scrapped data from the Zimbabwe Stock Exchang
+- I scrapped data from the Zimbabwe Stock Exchange
 - Scrapped Emails from the same
 - Scrapped images from the same website
 - Scrapped tables from the World population Wikipedia webpage and converted it into a dataframe.
