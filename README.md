@@ -9,7 +9,7 @@ Hence:-
 - Scrapped images from the same website.
 - Scrapped tables from the World population Wikipedia webpage and converted it into a dataframe.
 - Used pandas (pd.read.html) to scrap data from a table @'https://www.zse.co.zw/price-sheet' website.
-- Cleaned the data although it had a lot of discrepencies 
+- Cleaned the data although it had a lot of discrepencies.
 - Saved the new data set into my local library [Blessing Nehohwa]
 
 **[Python Data-science Introduction- Data Extraction/Web Scrapping](https://github.com/BlessingNehohwa/Data-Science-Mini-Real-World-Projects-Python/blob/main/Webscrapping%20Data%20Extraction.ipynb
